@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using System.Linq;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
@@ -47,6 +48,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     private void OnPhotonNetworkGotConnected()
     {
         isConnected = true;
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     #region Public Methods
@@ -71,9 +73,29 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         return PhotonNetwork.GetCustomRoomList(TypedLobby.Default, "C0=" + roomName);
     }
 
+    public List<Player> GetCurrentRoomPlayers()
+    {
+        return PhotonNetwork.CurrentRoom.Players.Values.ToList();
+    }
+
+    public bool IsMasterClient()
+    {
+        return PhotonNetwork.IsMasterClient;
+    }
+
     public void CreateRoom(string roomName)
     {
         PhotonNetwork.CreateRoom(roomName);
+    }
+
+    public void CreateRoom(string roomName, int playerCount)
+    {
+        RoomOptions roomOptions = new RoomOptions
+        {
+            MaxPlayers = (byte)playerCount
+        };
+
+        PhotonNetwork.CreateRoom(roomName, roomOptions);
     }
 
     public void JoinRoom(string roomName)

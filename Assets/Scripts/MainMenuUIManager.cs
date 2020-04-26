@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -26,6 +27,9 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] private Button gameCreateButton;
     [SerializeField] private TMP_InputField roomCodeInputField;
     [SerializeField] private Button gameJoinButton;
+    [SerializeField] private Button[] playerCountNumberButtons;
+    [SerializeField] private Button lastSelectedPlayerCountButton;
+    [SerializeField] private int selectedPlayerCount = 0;
 
     public delegate void OnMyPlayerNameChanged(string newName);
     public static OnMyPlayerNameChanged onMyPlayerNameChanged;
@@ -44,6 +48,12 @@ public class MainMenuUIManager : MonoBehaviour
         gameJoinButton.onClick.AddListener(OnGameJoinClick);
         changePlayerNameButton.onClick.AddListener(EnableNoNameDialog);
 
+        for (int i = 0; i < playerCountNumberButtons.Length; i++)
+        {
+            int index = i;
+            playerCountNumberButtons[i].onClick.AddListener(delegate { SelectPlayerCountButtonClick(index); });
+        }
+
         onMyPlayerNameChanged += PlayerNameChanged;
         NetworkManager.onMyPlayerJoinedRoom += MyPlayerJoinedRoom;
     }
@@ -55,6 +65,12 @@ public class MainMenuUIManager : MonoBehaviour
         gameCreateButton.onClick.RemoveListener(OnGameCreateClick);
         gameJoinButton.onClick.RemoveListener(OnGameJoinClick);
         changePlayerNameButton.onClick.RemoveListener(EnableNoNameDialog);
+
+        for (int i = 0; i < playerCountNumberButtons.Length; i++)
+        {
+            int index = i;
+            playerCountNumberButtons[i].onClick.RemoveListener(delegate { SelectPlayerCountButtonClick(index); });
+        }
 
         onMyPlayerNameChanged -= PlayerNameChanged;
         NetworkManager.onMyPlayerJoinedRoom -= MyPlayerJoinedRoom;
@@ -74,7 +90,7 @@ public class MainMenuUIManager : MonoBehaviour
 
     private void MyPlayerJoinedRoom()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     #endregion
@@ -150,9 +166,16 @@ public class MainMenuUIManager : MonoBehaviour
 
     private void OnGameCreateClick()
     {
+        if(selectedPlayerCount == 0)
+        {
+            //TODO : Show message as we cannot select 0 as PlayerCount
+
+            return;
+        }
+
         string roomName = GiveRandomRoomName();
 
-        NetworkManager.Instance.CreateRoom(roomName);
+        NetworkManager.Instance.CreateRoom(roomName, selectedPlayerCount);
 
         ClosePhotonUI();
     }
@@ -171,6 +194,23 @@ public class MainMenuUIManager : MonoBehaviour
 
         NetworkManager.Instance.JoinRoom(roomName);
         ClosePhotonUI();
+    }
+
+    private void SelectPlayerCountButtonClick(int index)
+    {
+        if(lastSelectedPlayerCountButton != null)
+        {
+            lastSelectedPlayerCountButton.transform.Find("SelectionImage").gameObject.SetActive(false);
+        }
+
+
+        Button button = playerCountNumberButtons[index];
+        TextMeshProUGUI tmp = button.GetComponentInChildren<TextMeshProUGUI>();
+
+        int.TryParse(tmp.text, out selectedPlayerCount);
+
+        lastSelectedPlayerCountButton = button;
+        lastSelectedPlayerCountButton.transform.Find("SelectionImage").gameObject.SetActive(true);
     }
 
     #endregion

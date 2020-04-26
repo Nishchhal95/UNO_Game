@@ -5,20 +5,21 @@ using Photon.Pun;
 
 public class _GameManager : MonoBehaviour
 {
-    [SerializeField] private string playerPrefabName;
-    [SerializeField] private GameObject myPlayerGO;
+    public static _GameManager Instance = null;
 
-    private void Start()
-    {
-        //TODO : Show players waiting for Master Client to start the game...
-    }
+    public Transform myPlayerHolder;
+    public Transform[] otherPlayerHolders;
 
-    private void Update()
+    private void Awake()
     {
-        if(Input.GetKeyDown(KeyCode.O))
+        if(Instance == null)
         {
-            myPlayerGO = PhotonNetwork.Instantiate(playerPrefabName, new Vector3(0, PhotonNetwork.CurrentRoom.PlayerCount * 2, 0), Quaternion.identity);
-            myPlayerGO.GetComponentInChildren<TMPro.TextMeshProUGUI>().SetText(PhotonNetwork.LocalPlayer.NickName);
+            Instance = this;
+        }
+
+        else
+        {
+            Destroy(this);
         }
     }
 }
