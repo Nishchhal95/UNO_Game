@@ -12,17 +12,17 @@ public class PlayerModel
     public string playerName;
     public string playerID;
 
-    //public List<CardController> CardList
-    //{
-    //    get
-    //    {
-    //        return cardList;
-    //    }
+    public List<CardController> CardList
+    {
+        get
+        {
+            return cardList;
+        }
 
-    //    set
-    //    {
-    //        cardList = value;
-    //    }
-    //}
-    //[SerializeField] private List<CardController> cardList = new List<CardController>();
+        set
+        {
+            cardList = value;
+        }
+    }
+    [SerializeField] private List<CardController> cardList = new List<CardController>();
 }

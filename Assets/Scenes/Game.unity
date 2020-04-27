@@ -121,6 +121,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &103973753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 103973754}
+  - component: {fileID: 103973755}
+  m_Layer: 0
+  m_Name: CenterDeck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &103973754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103973753}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &103973755
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103973753}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &222338297
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +944,532 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420008327}
   m_CullTransparentMesh: 0
+--- !u!1 &1545541460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1545541461}
+  - component: {fileID: 1545541462}
+  m_Layer: 0
+  m_Name: CardDealer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1545541461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545541460}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1545541462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545541460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae9be9b00a81f74dab5663881665671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cards:
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  - cardName: 
+    cardID: -1
+    isSpecial: 0
+    specialCardType: 0
+    isWild: 0
+    wildCardType: 0
+    cardColor: 0
+    cardNumber: 0
+  cardsDeck: []
+  cardSprites: []
 --- !u!1 &1649855278
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +1530,7 @@ Transform:
   - {fileID: 1649855279}
   - {fileID: 222338298}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1698325509
 GameObject:
@@ -1132,7 +1715,7 @@ RectTransform:
   m_Children:
   - {fileID: 1221306323}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1295,6 +1878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2014641371}
   - component: {fileID: 2014641372}
+  - component: {fileID: 2014641373}
   m_Layer: 0
   m_Name: _GameManager
   m_TagString: Untagged
@@ -1328,10 +1912,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548a8b7868cd6e947beaf3bcdf14183a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  photonView: {fileID: 0}
+  gamePlayerPrefabName: Player
+  cardPrefab: {fileID: 1272918143217594587, guid: e4f51818de9093249a4c889864bec346,
+    type: 3}
+  cardDealer: {fileID: 1545541462}
+  playerList: []
+  playerPhotonViewList: []
+  lastCardController: {fileID: 0}
+  centerTableTransform: {fileID: 103973754}
   myPlayerHolder: {fileID: 1649855279}
   otherPlayerHolders:
   - {fileID: 256100681}
   - {fileID: 1841975353}
   - {fileID: 844295407}
   - {fileID: 1923096177}
-  photonView: {fileID: 0}
+--- !u!114 &2014641373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014641370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0

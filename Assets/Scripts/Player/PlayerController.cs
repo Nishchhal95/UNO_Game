@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        _GameManager.Instance.playerList.Add(this);
+        _GameManager.Instance.playerPhotonViewList.Add(myPhotonView);
         SetupPlayer();
     }
 
@@ -54,43 +56,50 @@ public class PlayerController : MonoBehaviour
         playerView.UpdatePlayerName(playerModel.playerName);
     }
 
-    //public void SetInitialCards(List<CardController> cards)
-    //{
-    //    playerModel.CardList = cards;
-    //    playerView.DisplayCards(cards);
-    //}
+    public void SetInitialCards(List<CardController> cards)
+    {
+        playerModel.CardList = cards;
+        playerView.DisplayCards(cards);
+    }
 
-    //public void SetInitialCards(List<CardModel> cards)
-    //{
-    //    List<CardController> cardControllerList = new List<CardController>();
+    public void SetInitialCards(List<CardModel> cards)
+    {
+        if(!myPhotonView.IsMine)
+        {
+            string playerNameText = playerView.playerNameText.text;
+            playerView.playerNameText.text = playerNameText + "__" + cards.Count;
+            return;
+        }
 
-    //    for (int i = 0; i < cards.Count; i++)
-    //    {
-    //        CardController cardController = Multi_GameManager.Instance.SpawnCardFromCardModel(cards[i]);
-    //        cardControllerList.Add(cardController);
-    //    }
+        List<CardController> cardControllerList = new List<CardController>();
 
-    //    playerModel.CardList = cardControllerList;
-    //    playerView.DisplayCards(cardControllerList);
-    //}
+        for (int i = 0; i < cards.Count; i++)
+        {
+            CardController cardController = _GameManager.Instance.SpawnCardFromCardModel(cards[i]);
+            cardControllerList.Add(cardController);
+        }
 
-    //public void AssignNewCard(CardController pickedNewCard)
-    //{
-    //    playerModel.CardList.Add(pickedNewCard);
-    //    LeanTween.move(pickedNewCard.gameObject, this.transform.position, .5f).setEaseOutBounce().setOnComplete(() => 
-    //    {
-    //        playerView.DisplayCards(playerModel.CardList);
-    //    });
-    //}
+        playerModel.CardList = cardControllerList;
+        playerView.DisplayCards(cardControllerList);
+    }
 
-    //public void AssignNewCard(CardModel pickedNewCard)
-    //{
-    //    CardController cardController = Multi_GameManager.Instance.SpawnCardFromCardModel(pickedNewCard);
+    public void AssignNewCard(CardController pickedNewCard)
+    {
+        playerModel.CardList.Add(pickedNewCard);
+        LeanTween.move(pickedNewCard.gameObject, this.transform.position, .5f).setEaseOutBounce().setOnComplete(() =>
+        {
+            playerView.DisplayCards(playerModel.CardList);
+        });
+    }
 
-    //    playerModel.CardList.Add(cardController);
-    //    LeanTween.move(cardController.gameObject, this.transform.position, .5f).setEaseOutBounce().setOnComplete(() =>
-    //    {
-    //        playerView.DisplayCards(playerModel.CardList);
-    //    });
-    //}
+    public void AssignNewCard(CardModel pickedNewCard)
+    {
+        CardController cardController = _GameManager.Instance.SpawnCardFromCardModel(pickedNewCard);
+
+        playerModel.CardList.Add(cardController);
+        LeanTween.move(cardController.gameObject, this.transform.position, .5f).setEaseOutBounce().setOnComplete(() =>
+        {
+            playerView.DisplayCards(playerModel.CardList);
+        });
+    }
 }

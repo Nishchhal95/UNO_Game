@@ -38,6 +38,9 @@ MonoBehaviour:
   - RespawnSpaceship
   - SpawnGamePlayer_RPC
   - SpawnPlayer_RPC
+  - SetCards_RPC
+  - UpdatedShuffledCards_RPC
+  - CardPlayed_RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

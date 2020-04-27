@@ -20,15 +20,15 @@ public class LobbyPlayer : MonoBehaviour
         InitializeMyPlayer();
     }
 
-    private void OnEnable()
-    {
-        LobbyCanvasManager.onGameStartClick += StartGame;
-    }
+    //private void OnEnable()
+    //{
+    //    LobbyCanvasManager.onGameStartClick += StartGame;
+    //}
 
-    private void OnDisable()
-    {
-        LobbyCanvasManager.onGameStartClick -= StartGame;
-    }
+    //private void OnDisable()
+    //{
+    //    LobbyCanvasManager.onGameStartClick -= StartGame;
+    //}
 
     private void InitializeMyPlayer()
     {
@@ -46,19 +46,19 @@ public class LobbyPlayer : MonoBehaviour
         playerNameText.SetText(myPhotonView.Owner.NickName);
     }
 
-    private void StartGame()
-    {
-        if (myPhotonView.Owner.IsMasterClient)
-        {
-            myPhotonView.RPC("SpawnGamePlayer_RPC", RpcTarget.AllBufferedViaServer, new object[] { });
-        }
-    }
+    //private void StartGame()
+    //{
+    //    if (myPhotonView.Owner.IsMasterClient)
+    //    {
+    //        myPhotonView.RPC("SpawnGamePlayer_RPC", RpcTarget.AllBufferedViaServer, new object[] { });
+    //    }
+    //}
 
-    [PunRPC]
-    public void SpawnGamePlayer_RPC()
-    {
-        myGamePlayer = PhotonNetwork.Instantiate(playerPrefabName, new Vector3(), Quaternion.identity);
+    //[PunRPC]
+    //public void SpawnGamePlayer_RPC()
+    //{
+    //    myGamePlayer = PhotonNetwork.Instantiate(playerPrefabName, new Vector3(), Quaternion.identity);
 
-        LobbyCanvasManager.hideLobbyUI?.Invoke();
-    }
+    //    LobbyCanvasManager.hideLobbyUI?.Invoke();
+    //}
 }
